@@ -1,0 +1,1178 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>好益保</title>
+<link type="text/css" rel="stylesheet" href="http://insurance.onclick.im/wechat/exwsm/styles/insurance/css/global2.css">
+<link type="text/css" rel="stylesheet" href="http://insurance.onclick.im/wechat/exwsm/styles/insurance/css/project.css">
+<link type="text/css" rel="stylesheet"
+            href="http://insurance.onclick.im/wechat/exwsm/styles/insurance/css/wechat/carInfo.css">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+<meta content="telephone=no" name="format-detection" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<script src="http://insurance.onclick.im/wechat/exwsm/styles/insurance/js/jquery-1.8.0.min.js"></script>
+<script src="http://insurance.onclick.im/wechat/exwsm/styles/insurance/js/project.js"></script>
+<script src="http://insurance.onclick.im/wechat/exwsm/styles/insurance/js/phoneAlert.js"></script>
+<script src="http://insurance.onclick.im/wechat/exwsm/styles/insurance/js/wechat/carInfo.js"></script>
+
+<s:set name="oss" value="oss"/>
+<s:set name="url" value="url"/>
+
+<s:set name="projectName" value="projectName"/>
+<script>
+var pageScope_context='';
+var oss='http://insurance.onclick.im/wechat';
+var url='http://insurance.onclick.im/wechat/exwsm';
+var picbankurl = "http://s1.wego168.com:8080/imgService";
+var picUploadUrl = "http://s1.wego168.com:8080/imgService";
+var picDownloadUrl = "http://s1.wego168.com/imgApp";
+</script>
+<script language="JScript" type="text/javascript" src="http://insurance.onclick.im/wechat/js/jquery-1.8.0.min.js"></script>
+
+<script language="JScript" type="text/javascript" src="http://insurance.onclick.im/wechat/js/jquery-easyui-1.3.2/jquery.easyui.min.js"></script>
+<script language="JScript" type="text/javascript" src="http://insurance.onclick.im/wechat/js/jquery-easyui-1.3.2/easyui.fix.js"></script>
+<script language="JScript" type="text/javascript" src="http://insurance.onclick.im/wechat/js/jquery-easyui-1.3.2/locale/easyui-lang-zh_CN.js"></script>
+
+<script language="JScript" type="text/javascript" src="http://insurance.onclick.im/wechat/js/jquery-easyui-1.3.2/datagrid-groupview.js"></script>
+<script language="JScript" type="text/javascript" src="http://insurance.onclick.im/wechat/js/jquery-easyui-1.3.2/jquery.edatagrid.js"></script>
+<script language="JScript" type="text/javascript" src="http://insurance.onclick.im/wechat/js/jquery-easyui-1.3.2/edatagrid-struts.js"></script>
+
+<script language="JScript" type="text/javascript" src="http://insurance.onclick.im/wechat/js/common.js?201604085599"></script>
+<script language="JScript" type="text/javascript" src="http://insurance.onclick.im/wechat/js/validatebox.js"></script>
+<script language="JScript" type="text/javascript" src="http://insurance.onclick.im/wechat/js/page.js"></script>
+
+<script language="JScript" type="text/javascript" src="http://insurance.onclick.im/wechat/js/iColorPicker.js"></script>
+<script language="JScript" type="text/javascript" src="http://insurance.onclick.im/wechat/js/imgSelect.js"></script>
+<script language="JScript" type="text/javascript" src="http://insurance.onclick.im/wechat/js/selectLink.js?201512101054"></script>
+<script language="JScript" type="text/javascript" src="http://insurance.onclick.im/wechat/js/PageView.js"></script>     
+<script type="text/javascript" src="http://insurance.onclick.im/wechat/js/form/form-check.js"></script>
+<link type="text/css" rel="stylesheet" href="http://insurance.onclick.im/wechat/mall/default/css/button.css"/>
+
+<script type="text/javascript" charset="utf-8" src="/ueditor/utf8-jsp/ueditor.config.js?315233"></script>
+<script type="text/javascript" charset="utf-8" src="/ueditor/utf8-jsp/ueditor.all.js?88112"> </script>
+<!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+<!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+<script type="text/javascript" charset="utf-8" src="/ueditor/utf8-jsp/lang/zh-cn/zh-cn.js?11123"></script>
+
+<!-- add by sunyuantong 2015-07-29 member按钮鉴权 -->
+<script type="text/javascript">
+var authors={};
+var nameSpace='/wechat';
+var compareUrl=nameSpace+"/"+'WxInsurance'+'!';//目标    /base/Community 菜单 /base/Community!query.action
+var memerOr='no';
+var needMenuAuth='unmenu';
+function authorsDisplay() {
+    if(memerOr=""||memerOr==undefined||memerOr=="no"){
+        return;//非members成员
+    }
+    if(needMenuAuth.indexOf(compareUrl)<0){
+        return;
+    }
+    var tagDec="";
+    for(var p in authors){
+        if(p.indexOf(compareUrl)>=0){
+            tagDec=authors[p];
+            break;
+        }
+    }
+    if(tagDec==null||tagDec==""){
+        
+    }
+    if(tagDec==null||tagDec==""){
+        return;
+    }
+    if(tagDec.indexOf("add")    < 0){ disPlayButton("add"); }
+    if(tagDec.indexOf("delete") < 0){ disPlayButton("delete"); }
+    if(tagDec.indexOf("update") < 0){
+        if(tagDec.indexOf("seek") < 0){
+            disPlayButton("seek");//update seek  都没有
+        }else{
+            disPlayButton("update"); //seek有   update 没有
+        }
+    }
+    if(tagDec.indexOf("import") < 0){ disPlayButton("import"); }
+    if(tagDec.indexOf("export") < 0){ disPlayButton("export"); }
+    if(tagDec.indexOf("other")  < 0){ disPlayButton("other"); }
+}
+//按钮元素显示 控制
+function disPlayButton(data){
+    var as=document.getElementsByTagName("a");
+    if(data=="update"){
+        var aChild="<span class='l-btn-left'><span class='l-btn-text icon-edit l-btn-icon-left'>查看</span></span>";
+        $("a.seek").empty();
+        $("a.seek").append(aChild);
+        for(var i=0;i<as.length;i++){
+            if(as[i].className.match(new RegExp('(\\s|^)'+data+'(\\s|$)'))){
+                as[i].style.display="none";
+            }
+        }
+    }else{
+        for(var i=0;i<as.length;i++){
+            if(as[i].className.match(new RegExp('(\\s|^)'+data+'(\\s|$)'))){
+                as[i].style.display="none";
+            }
+        }
+    }
+}
+ 
+var menuIdButtons = {};
+function menuButtonDisplay(needed,tragetId){
+    if(memerOr=""||memerOr==undefined||memerOr=="no"){
+        return;
+    }
+
+    console.log("needMenuAuth:"+needMenuAuth);
+    console.log("compareUrl:"+compareUrl);
+    
+    if(needMenuAuth.indexOf(compareUrl)<0){
+        return;
+    }
+    var menuId = window.parent.currentMenuId;
+    var myButtons = menuIdButtons[menuId];
+    if(!needed&&!myButtons){
+        return;
+    }
+    console.log("menuId:"+menuId);
+    console.log("myButtons:"+myButtons);
+    var buttons;
+    if(tragetId){
+        buttons = $("#"+tragetId).find("a");
+    }else{
+        buttons = $("a");
+    }
+    $(buttons).each(function(){
+        var buttonId = $(this).attr("button-id");
+        if(buttonId){
+            $(this).hide();
+            if(myButtons&&myButtons.indexOf(buttonId)!=-1){
+                $(this).show();
+            }
+        }
+    });
+}
+     
+</script>
+<script type="text/javascript">
+document.ready=function(){
+    //authorsDisplay();
+    setTimeout(menuButtonDisplay(true), 1000);
+};
+</script>
+ <!-- end by sunyuantong 2015-07-29   -->
+
+
+<script type="text/javascript" src="http://insurance.onclick.im/wechat/styles/baidu/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="http://insurance.onclick.im/wechat/js/form/form-check.js"></script>
+<script type="text/javascript" src="http://insurance.onclick.im/wechat/js/activity/activity.js"></script>
+<script type="text/javascript" src="http://insurance.onclick.im/wechat/js/layer.m.js"></script>
+<script type="text/javascript" src="http://insurance.onclick.im/wechat/js/mobileCommon.js"></script>
+<script type="text/javascript" src="http://insurance.onclick.im/wechat/js/PageView.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="http://insurance.onclick.im/wechat/js/wxsdk.js"></script>
+<script>
+function licenseInfoSubmit(){
+    var param = {};
+    /*
+    *新加参数
+    *userName:用户名
+    *IDCard：身份证号
+    *radio：是否过户；返回值为：radio1 则过户；radio2 则不过户；
+    */
+    //param["userName"]=$("#userName").val();
+    //param["IdCard"]=$("#IdCard").val();
+    //param["radio"]=$("input[name='radio']:checked").val();
+    if($("#vehicleModel_modelName").val()==""){
+        new Toast({context:$('body'),message:'品牌型号不得为空'}).show(); 
+        return;
+    }
+    if($("#vin").val()==""){
+        new Toast({context:$('body'),message:'车架号不得为空'}).show(); 
+        return;
+    }
+    if($("#engineNo").val()==""){
+        new Toast({context:$('body'),message:'发动机号不得为空'}).show(); 
+        return;
+    }
+    if($("#firstRegisterDate").val()==""){
+        new Toast({context:$('body'),message:'注册日期不得为空'}).show(); 
+        return;
+    }
+    if($("#userName").val()==""){
+        new Toast({context:$('body'),message:'用户名不得为空'}).show(); 
+        return;
+    }
+    if($("#IdCard").val()==""){
+        new Toast({context:$('body'),message:'身份证不得为空'}).show(); 
+        return;
+    }
+    var patrn=/^[A-Z0-9]{17}$/;
+    var regu=patrn.test($("#vin").val());
+    if(regu==false){
+        new Toast({context:$('body'),message:'车架号必须为17位且仅允许包含大写字母和阿拉伯数字'}).show(); 
+        return;
+    } 
+    param["vehicleModel_modelName"] = $("#vehicleModel_modelName").val();
+    param["vin"] = $("#vin").val();
+    param["firstRegisterDate"] = $("#firstRegisterDate").val();
+    param["engineNo"] = $("#engineNo").val();
+    param["IdCard"]=$("#IdCard").val();
+    var modelCode = $("#vehicleModel_modelCode").val();
+    var model = $("#vehicleModel_model").val();
+    param["modelCode"] = modelCode;
+    param["model"] = model;
+    param["owners"] =$("#userName").val();
+    param["chgownerFlag"] = $("input[name='chgownerFlag']:checked").val();
+    param["factory"] = $("#vehicleModel_factory").val();
+    //var replacementValue=$("input[name='modelId']:checked").parent().find("input[name='replacementValue']").val();
+    param["replacementValue"] = $("#vehicleModel_replacementValue").val();
+    $.ajax({
+            type: "POST",
+            url: "WxInsurance!saveVehicleDetail.action",
+            data: param,
+            dataType: "json",
+            success: function(obj){
+                if(obj.successMsg!=""){
+                    window.location.href="WxInsurance!coverageListView.action";
+                }else{
+                    showInfo(obj.errorMsg);
+                }
+            },
+            error:function(e){
+                showInfo("失败");
+            }
+        });
+/*  formSubmit(param, "WxInsurance!saveVehicleForm.action", function(obj) {
+        alert("asdas");
+        window.location.href="WxInsurance!coverageListView.action";
+    }, function(obj) {
+        new Toast({context:$('body'),message:obj.errorMsg}).show(); 
+    }, null, null); */
+}
+
+
+function doSearch(){
+    if($("#vehicleModel_modelName").val()!=""){
+        $(".searchbtn").attr("href",href="javascript:void(0)");
+        $(".searchbtn").css("display","none");
+        $(".rect2").css("display","block");
+         $.ajax({
+            type:"POST",
+                url: "WxInsurance!queryVehicleModelView.action?vehicleModel_modelName="+$("#vehicleModel_modelName").val(),
+                dataType: "JSON",
+                success: function(obj){
+                    $(".searchbtn").attr("href",href="javascript:doSearch()");
+                    $(".searchbtn").css("display","block");
+                    $(".rect2").css("display","none");
+                    var vehicleModel=obj.successMsg;
+                    vehicleModel=JSON.parse(vehicleModel);
+                    if(vehicleModel=="" || vehicleModel==undefined){
+                        showInfo("没有查询到该品牌型号数据");
+                        return;
+                    }
+                    $("#vehicleView").show(); // 显示
+                    var vehicleView="<ul id='showCarTypeList' class='carTypeList listCss'>";
+                    for(var i=0;i<vehicleModel.length;i++){
+                        vehicleView+="<li><div class='left'><input type='hidden' id='ve_modelCode' name='modelCode' value='"+vehicleModel[i]['modelCode']+"'/>";
+                        vehicleView+="<input type='hidden'  id='ve_model' name='model' value='"+vehicleModel[i]['model']+"' />";
+                        vehicleView+="<input type='hidden'  id='ve_factory' name='factory' value='"+vehicleModel[i]['factory']+"' />";
+                        vehicleView+="<input type='hidden'  id='ve_ratedPassengerCapacity'  name='ratedPassengerCapacity' value='"+vehicleModel[i]['ratedPassengerCapacity']+"' />";
+                        vehicleView+="<input type='hidden' id='ve_replacementValue' name='replacementValue' value='"+vehicleModel[i]['replacementValue']+"' />";
+                        vehicleView+="<input type='hidden' id='ve_noLicenseFlag' name='noLicenseFlag' value='1' /></div>";
+                        vehicleView+="<div class='right'>"+vehicleModel[i]['modelName']+":"+vehicleModel[i]['displaceMent'];
+                        vehicleView+=vehicleModel[i]['marketYear']+"款"+vehicleModel[i]['derailleurType']+"&nbsp";
+                        vehicleView+=vehicleModel[i]['ratedPassengerCapacity']+"座"+vehicleModel[i]['series']+"(参考价"+vehicleModel[i]['replacementValue']+")";
+                        vehicleView+="</div>";
+                        vehicleView+="</li>";
+                    }
+                    vehicleView+="</ul>";
+                    $("#vehicleView").html(vehicleView);
+                },
+                error:function(e){
+                    showInfo("查询失败");
+                }
+        }); 
+        //window.location.href="WxInsurance!queryVehicleModelView.action?vehicleModel_modelName="+$("#vehicleModel_modelName").val();
+    }
+    else{
+        new Toast({context:$('body'),message:'搜索条件不得为空'}).show(); 
+    }
+}
+
+/*该方法在页面已被注释掉*/
+ 
+function carTypeSubmit(){
+    if($("#vehicleModel_modelName").val()==""){
+        new Toast({context:$('body'),message:'品牌型号不得为空'}).show(); 
+        return;
+    }
+    if($("#vin").val()==""){
+        new Toast({context:$('body'),message:'车架号不得为空'}).show(); 
+        return;
+    }
+    if($("#engineNo").val()==""){
+        new Toast({context:$('body'),message:'发动机号不得为空'}).show(); 
+        return;
+    }
+    if($("#firstRegisterDate").val()==""){
+        new Toast({context:$('body'),message:'注册日期不得为空'}).show(); 
+        return;
+    }
+    if($("#userName").val()==""){
+        new Toast({context:$('body'),message:'用户名不得为空'}).show(); 
+        return;
+    }
+    if($("#IdCard").val()==""){
+        new Toast({context:$('body'),message:'身份证不得为空'}).show(); 
+        return;
+    }
+    
+    var modelCode =  $("#vehicleModel_modelCode").val();
+    var model = $("#vehicleModel_model").val();
+    var param = {};
+    param["modelCode"] = modelCode;
+    param["model"] = model;
+    param["factory"] = $("#vehicleModel_factory").val();
+    param["vehicleModel_modelName"] = $("#vehicleModel_modelName").val();
+    param["vin"] = $("#vin").val();
+    param["firstRegisterDate"] = $("#firstRegisterDate").val();
+    param["engineNo"] = $("#engineNo").val();
+    /*
+     *新加参数
+     *userName:用户名
+     *IDCard：身份证号
+     *radio：是否过户；返回值为：radio1 则过户；radio2 则不过户；
+     */
+    param["userName"]=$("#userName").val();
+    param["IdCard"]=$("#IdCard").val();
+    param["radio"]=$("input[name='radio']:checked").val();
+    formSubmit(param, "WxInsurance!saveVehicleDetail.action", function(obj) {
+        window.location.href="WxInsurance!coverageListView.action";
+    }, function(obj) {
+        new Toast({context:$('body'),message:obj.errorMsg}).show(); 
+    }, null, null);
+}
+function carInfoSubmit(){
+    var param = {};
+    param["licensePlateNo"] = $("#areaName").val()+$("input[name=licensePlateNo]").val();
+    if($("input[name=licensePlateNo]").val()==""){
+        new Toast({context:$('body'),message:'车牌号码不得为空'}).show(); 
+        return;
+    }
+    var patrn=/^[A-Z0-9]{6}$/;
+    var regu=patrn.test($("input[name=licensePlateNo]").val());
+    if(regu==false){
+        new Toast({context:$('body'),message:'车牌号码必须由6位阿拉伯数字及大写英文字母组成'}).show(); 
+        return;
+    }
+    formSubmit(param, "http://insurance.onclick.im/wechat/exwsm/wechat/WxInsurance!licenseInfo.action", function(obj) {
+        window.location.href="http://insurance.onclick.im/wechat/exwsm/wechat/WxInsurance!carTypeView.action";
+    }, function(obj) {
+        new Toast({context:$('body'),message:obj.errorMsg}).show(); 
+    }, null, null); 
+}
+function GetAdviceValue() {
+    var param = {};
+    param["startDate"] = $("input[name=app_biStartDate]").val();
+    formSubmit(param, "WxInsurance!getDepreciation.action", function(obj) {
+        var reVehicleVal = parseFloat($("#replacementValue").val()) * (1 - parseFloat(obj.disRate));
+        reVehicleVal = reVehicleVal.toFixed(2);
+        $("#A_limitAmount1").text(obj.disRate);
+        $("#A_limitAmount").val(reVehicleVal);
+        $("#G_limitAmount").val(reVehicleVal);
+        coverageListSubmit();
+    }, function(obj) {
+        new Toast({context:$('body'),message:obj.errorMsg}).show(); 
+    }, null, null);
+}
+function coverageListSubmit() {
+    var coverages = [];
+    var param = {};
+    var sumAmount = 0;//投保总保额
+    $(".chkbox:checked").each(function() {
+        if ($(this).val().indexOf("K") < 0 && $(this).val().indexOf("H") < 0) {
+            if ($(this).val() == "BZ") {
+                param["BZ"] = 1;//是否包含交强险，1==有，0==没有
+            } else {
+                param["BZ"] = 0;
+            }
+            var coverage = {};
+            coverage["coverageCode"] = $(this).val();
+            if ($(this).parents("li").find(".limitAmount").val() != undefined) {
+                coverage["limitAmount"] = $(this).parents("li").find(".limitAmount").val();
+                sumAmount += Math.round(parseFloat(coverage["limitAmount"]) * 100) / 100;
+            }
+            if ($(this).parents("li").find(".value").val() != undefined) {
+                coverage["value"] = $(this).parents("li").find(".value").val();
+            }
+            if ($(this).parents("li").find(".modeCode").val() != undefined) {
+                coverage["modecode"] = $(this).parents("li").find(".modeCode").val();
+            }
+            if ($(this).parents("li").find(".quantity").val() != undefined) {
+                coverage["quantity"] = $(this).parents("li").find(".quantity").val()-1;
+            }
+            if ($(this).parents("li").find(".unitAmount").val() != undefined) {
+                coverage["unitAmount"] = $(this).parents("li").find(".unitAmount").val();
+            }
+            if($(this).val()=="F"){
+                coverage["compensationFreeExcepted"]= "2";   
+            }
+            else if($(this).val()=="C11"){
+                coverage["compensationFreeExcepted"]= "2";   
+            }
+            else if($(this).val()=="Q4"){
+                coverage["compensationFreeExcepted"] = "2";  
+            }
+            else {
+                coverage["compensationFreeExcepted"] = "1";
+            } 
+            coverages.push(coverage);
+        }
+        
+    });
+    if($("#datad_K").val().indexOf("K")==0){
+        var coverage_1 = {};
+        if($("#chkbox_A").attr("checked")=="checked"){
+            coverage_1["coverageCode"]="MA";
+            coverage_1["compensationFreeExcepted"] = "2";
+            coverages.push(coverage_1);
+            coverage_1={};
+        }
+        if($("#chkbox_B").attr("checked")=="checked"){
+            coverage_1["coverageCode"]="MB";
+            coverage_1["compensationFreeExcepted"] = "2";
+            coverages.push(coverage_1);
+            coverage_1={};
+        }
+        if($("#chkbox_D11").attr("checked")=="checked"){
+            coverage_1["coverageCode"]="MD11";
+            coverage_1["compensationFreeExcepted"] = "2";
+            coverages.push(coverage_1);
+            coverage_1={};
+        }
+        if($("#chkbox_D12").attr("checked")=="checked"){
+            coverage_1["coverageCode"]="MD12";
+            coverage_1["compensationFreeExcepted"] = "2";
+            coverages.push(coverage_1);
+            coverage_1={};
+        }
+        if($("#chkbox_G").attr("checked")=="checked"){
+            coverage_1["coverageCode"]="MG";
+            coverage_1["compensationFreeExcepted"] = "2";
+            coverages.push(coverage_1);
+            coverage_1={};
+        }
+    }
+    if($("#datad_H").val().indexOf("H")==0){
+        var coverage_1 = {};
+        if($("#chkbox_L").attr("checked")=="checked"){
+            coverage_1["coverageCode"]="ML";
+            coverage_1["compensationFreeExcepted"] = "2";
+            coverages.push(coverage_1);
+            coverage_1={};
+        }
+        if($("#chkbox_Z").attr("checked")=="checked"){
+            coverage_1["coverageCode"]="MZ";
+            coverage_1["compensationFreeExcepted"] = "2";
+            coverages.push(coverage_1);
+            coverage_1={};
+        }
+        if($("#chkbox_X0").attr("checked")=="checked"){
+            coverage_1["coverageCode"]="MX0";
+            coverage_1["compensationFreeExcepted"] = "2";
+            coverages.push(coverage_1);
+            coverage_1={};
+        }
+    }
+    param["biStartDate"] = $("#app_biStartDate").val();
+    param["ciStartDate"] = $("#app_ciStartDate").val();
+    sumAmount = Math.round(sumAmount * 100) / 100;
+    param["sumAmount"] = sumAmount;
+    param["coverageList"] = JSON.stringify(coverages);
+    //param["insCompanyName"] = $("input[name=insCompanyName]").val();
+    formSubmit(param, "WxInsurance!saveCoverageList.action", function(obj) {
+        window.location.href = "WxInsurance!companyChoose.action";
+    }, function(obj) {
+        new Toast({context:$('body'),message:obj.errorMsg}).show(); 
+    }, null, null);
+}
+var reContent = "";
+var totalFee = 0;//投保总费用
+function getDetail(reBody,reBodyBZ,btn){
+    reContent += "<table>";
+    if(reBody!=null&&reBody!=""){
+        reBody = JSON.parse(reBody);
+        var reApplication = reBody.application;//商业险保单信息
+        var reCoverageList = reBody.coverageList;//商业险的险种列表
+        if (reCoverageList.length > 0) {
+            reContent += "<tr style=\"background-color:#00b9c5\"><td colspan=2><big>商业险</big><td>￥" + reApplication.totalStandardPremium + "</td></td></tr>";
+            reContent += "<tr style=\"border-bottom:1px dashed #E3E3E3\"><td colspan=3>折扣：" + reCoverageList[0].discount + "</td></tr>";
+            for (var i = 0; i < reCoverageList.length; i++) {
+                var reCoverage = reCoverageList[i];
+                var coverageName = getCoverageName(reCoverage.coverageCode, true);
+                reContent += "<tr style=\"border-bottom:1px dashed #E3E3E3\"><td>" + coverageName + "</td>";
+                reContent += "<td>￥" + reCoverage.standardPremium + "</td></tr>";
+            }
+            totalFee += Math.round(parseFloat(reApplication.totalStandardPremium) * 100) / 100;
+        }
+    }
+    if(reBodyBZ!=null&&reBodyBZ!=""){
+        reBodyBZ = JSON.parse(reBodyBZ);
+        var reCoverageBzList = reBodyBZ.coverageList;//交强险的险种列表
+        var applicationBz = reBodyBZ.application ;//交强险保单信息
+        if(reCoverageBzList!=null){
+            var reCoverage = reCoverageBzList[0];
+            reContent += "<tr style=\"background-color:#00b9c5\"> <td colspan=2><big> 交强险 </big><td>￥" + reCoverage.standardPremium + "</td></td></tr>";
+            totalFee += Math.round(parseFloat(reCoverage.standardPremium) * 100) / 100;
+        }
+        if(applicationBz.sumPayTax!=null){
+            reContent += "<tr style=\"background-color:#00b9c5\"><td colspan=2><big>车船税</big><td>￥" + applicationBz.sumPayTax + "</td></td></tr>";
+            totalFee += Math.round(parseFloat(applicationBz.sumPayTax) * 100) / 100;
+        }   
+    }
+    reContent += "<tr style=\"border-bottom:1px dashed #E3E3E3\"><td colspan=3>总计：" +totalFee + "</td></tr>";
+    reContent += "</table>";
+    btn.parent().parent().find(".priceInfo").html("￥"+totalFee);
+    $("#totalFee").html("￥"+totalFee);
+    $("#businessDetail").html(reContent);
+    $(".likeOwner").click(function(){
+        if($(this).attr("checked")=="checked"){
+            $(this).parent().parent().parent().find(".list").hide();
+        }else{
+            $(this).parent().parent().parent().find(".list").show();
+        }
+    });
+}
+function getCoverageName(coverageCode, withRemarks) {
+    if (coverageCode == "A") {return "车辆损失险";
+    } else if (coverageCode == "B") {return "商业第三者责任保险";
+    } else if (coverageCode == "C11") {return "损失保险无法找到第三方特约险";
+    } else if (coverageCode == "D11") {return "车上人员责任险（司机）";
+    } else if (coverageCode == "D12") {return "车上人员责任险（乘客）";
+    } else if (coverageCode == "F") {return "玻璃单独破碎险";
+    } else if (coverageCode == "G") {return "全车盗抢险";
+    } else if (coverageCode == "L") {return "车身划痕损失险";
+    } else if (coverageCode == "Q4") {return "指定修理厂险";
+    } else if (coverageCode == "X0") {return "发动机涉水损失险";
+    } else if (coverageCode == "Z") {return "自燃损失险";
+    } else if (coverageCode == "MA") {return "不计免赔率险（车辆损失险）";
+    } else if (coverageCode == "MB") {return "不计免赔率险（第三者责任保险）";
+    } else if (coverageCode == "MD11") {return "不计免赔率险（车上人员责任保险（司机））";
+    } else if (coverageCode == "MD12") {return "不计免赔率险（车上人员责任保险（乘客））";
+    } else if (coverageCode == "MG") {return "不计免赔率险（全车盗抢保险）";
+    } else if (coverageCode == "ML") {return "不计免赔率险（车身划痕损失险）";
+    } else if (coverageCode == "MX0") {return "不计免赔率险（车身划痕损失险）";
+    } else if (coverageCode == "MZ") {return "不计免赔率险（自燃损失险）";
+    } else if (coverageCode == "BZ") {return "交强险";
+    }return "无此险种";
+}
+function showDetail(){
+    if($("#businessDetailDiv").css("display")=="none"){
+        $("#businessDetailDiv").show();
+        $("#bg").show();
+    }else{
+        $("#businessDetailDiv").hide();
+        $("#bg").hide();
+    }
+}
+function hideDetail(){
+    $("#businessDetailDiv").hide();
+    $("#bg").hide();
+}
+function showDetail_2(){
+    $("#businessDetailDiv").show();
+    $("#bg").show();
+}
+//保存投保单   isCreateQRCode 是否生成二维码 
+function resultPriceSubmit(){
+    var carOwner = formCheck("carOwner");
+    if (!carOwner)  return;
+    var insured;
+    var policyHolder;
+    
+    if ($("#insured_detail_tool").is(':checked')) {
+        insured = carOwner;
+    } else {
+        insured = formCheck("insuredName");
+    }
+    if (!insured) return;
+    
+    if ($("#policyholder_detail_tool").is(':checked')) {
+        policyHolder = carOwner;
+    } 
+    else {
+        policyHolder = formCheck("policyHolder");
+    }
+    if (!policyHolder)  return;
+    //投保基本信息
+    var param = {};
+    param["carOwner"] = JSON.stringify(carOwner);
+    param["insured"] = JSON.stringify(insured);
+    param["policyHolder"] = JSON.stringify(policyHolder);
+    param["insCompanyName"] = "<s:property value='#session.insCompanyName'/>";
+    param["sumAmount"] = $("#sumAmount").val();
+    param["actualPolicyPrice"] = $("#actualPolicyPrice").val();
+    param["totalFee"] = $("#presentPrice").val();
+    if (param) {
+        $("#bg").show();
+        setTimeout(function() {
+            formSubmit(param, "WxInsurance!saveInsuranceForm.action", function(obj) {
+                new Toast({context:$('body'),message:'投保成功'}).show();
+                if(param["insCompanyName"]=="005000"){
+                    window.location.href ="WxInsurance!artificialSubmitSuccess.action";
+                    return;
+                }
+                window.location.href ="WxInsurance!payInfo.action";
+                
+            }, function(obj) {
+                new Toast({context:$('body'),message:obj.errorMsg}).show(); 
+                $("#showBJ").html("查看原因");
+                $("#showBJ").attr("href",href="javascript:showDetail_BJ();");
+                $("#motai_sd").html(obj.errorMsg);
+            }, function(obj) {},function(obj) {});
+        }, 1000);
+    }
+}
+function showDetail_BJ(){
+    $("#motai").show();
+}
+function hideDetail_BJ(){
+    $("#motai").hide();
+}
+function paySubmit(){
+    //新加的方法
+    var val=$('input:radio[name="checkbox"]:checked').val();
+    if(val==="checkbox1"){
+        debugger;
+        var param = {};
+        param["saveRecordId"] = "";
+        param["biProposalNo"] = "";
+        param["ciProposalNo"] ="";
+        //param["saveRecordId"] = "";
+        // param["poaType"] = $("[name=poaType]").val(); 
+        param["poaType"] = "10";
+        param["total_fee"]=$("#reBody_sum").text();
+        param["insCompanyName"] = "";
+        /* param["quoteTransCode"] = "";
+        param["quoteTransCodeBz"] = ""; */
+        param["quoteTransCode"] = "";
+        param["quoteTransCodeBz"] = "";
+        var companyId="";
+        if (companyId == "001000") {
+            formSubmit(param, "WxInsurance!payApply.action", function(obj) {
+                var url = obj.url;
+                var return_url = obj.return_url;
+                var timestamp = obj.timestamp;
+                var partnerid = obj.partnerid;
+                var sign = obj.sign;
+                url+="?client_type=99&return_url="+return_url+"&timestamp="+timestamp+"&partner_id="+partnerid+"&sign="+sign+"&total_fee="+obj.totalStandardPremium+"&out_trade_no="+obj.tradeNo;
+                window.open(url);
+            }, function(obj) {
+                showInfo(obj.errorMsg);
+            }, null, null);
+        }else if (companyId == "006000") {
+            /* param["businessNo"] = $("#biProposalNo").val();
+            param["bzbusinessNo"] = $("#ciProposalNo").val(); */
+            formSubmit(param,"WxInsurance!payApply.action",function(obj) {
+                var url = obj.url;
+                window.open(url);
+            }, function(obj) {
+                showMsgToTextArea(obj.errorMsg);
+            }, null, null);
+            return;
+        }
+    }
+    else if(val==="checkbox2"){
+            $('#motai_1').css("display","block");
+            var a=0.6;
+            var timer1=setInterval(function(){
+                a+=0.005;
+                $('.zzc_1').css("opacity",a);
+                if(a>=0.9){
+                    clearInterval(timer1);
+                }
+            },10);
+    }
+}
+function payCode(){
+    var param={};
+    param["poaType"]="10";
+    param["saveRecordId"]="";
+    //param["insCompanyName"]="001000";
+    param["quoteTransCode"] = "";
+    param["quoteTransCodeBz"] = "";
+    param["insCompanyName"]="";
+    param["total_fee"]=$("#reBody_sum").text();
+    $.ajax({
+        type:"POST",
+        url: "WxInsurance!getQrCode.action",
+            data: param,
+            dataType: "JSON",
+            success: function(datas){
+                /* var content = "<center><img src='http://insurance.onclick.im/wechat/"+datas.qrPath+"''/></center>";
+            $("#businessDetail").html(content);
+            closeLogin();
+            busin(); */
+            //$("#businessDetailDiv").show();
+                window.location.href = "WxInsurance!qrCodePage.action?qrPath="+datas.qrPath;
+            },
+            error:function(e){
+                alert("失败");
+            }
+    });
+}
+function showDetail_1(){
+    if($("#businessDetailDiv").css("display")=="none")
+        $("#businessDetailDiv").show();
+    else
+        $("#businessDetailDiv").hide();
+}
+function hideDetail_1(){
+    $("#businessDetailDiv").hide();
+}
+function searchInquiryRecord(){
+    var param = {};
+    param["condition"] = $("#condition").val();
+    formSubmit(param, "WxInsurance!queryInquiryRecord.action", function(obj) {
+        var datas = obj.inquiryRecordData;
+        var rtn = "";
+        for(var i=0;i<datas.length;i++){
+            var data = datas[i];
+            rtn+= "<tr><td>"+data.licenseplateno+"</td>";
+            rtn+= "<td>"+data.companyid+"</td>";
+            rtn+= "<td>"+data.totalfee+"</td>";
+            rtn+="<td><a href=\"#\" class=\"btn\"  style=\"margin-top: 0px;height:30px;width:100px;line-height: 32px !important;\">投保</a></td></tr>";
+        }
+        $("tbody").html(rtn);
+    }, function(obj) {
+        new Toast({context:$('body'),message:obj.errorMsg}).show(); 
+    }, function(obj) {},function(obj) {});
+}
+function searchInsuredRecord(){
+    var param = {};
+    param["condition"] = $("#condition").val();
+    formSubmit(param, "WxInsurance!queryInsuredRecord.action", function(obj) {
+        var datas = obj.inquiryRecordData;
+        var rtn = "";
+        for(var i=0;i<datas.length;i++){
+            var data = datas[i];
+            rtn+= "<tr><td>"+data.licenseplateno+"</td>";
+            rtn+= "<td>"+data.companyid+"</td>";
+        }
+        $("#tbody1").html(rtn);
+    }, function(obj) {
+        new Toast({context:$('body'),message:obj.errorMsg}).show(); 
+    }, function(obj) {},function(obj) {});
+}
+function searchInsuredRecord1(){
+    var param = {};
+    param["condition1"] = $("#condition1").val();
+    formSubmit(param, "WxInsurance!queryInsuredRecord1.action", function(obj) {
+        var datas = obj.inquiryRecordData1;
+        var rtn = "";
+        for(var i=0;i<datas.length;i++){
+            var data = datas[i];
+            rtn+= "<tr><td>"+data.licenseplateno+"</td>";
+            rtn+= "<td>"+data.companyid+"</td>";
+            if(data.state=="1"){rtn+="<td>保存成功</td>";}
+            else if(data.state=="2"){rtn+="<td>保存失败</td>";}
+            else if(data.state=="3"){rtn+="<td>核保成功</td>";}
+            else if(data.state=="4"){rtn+="<td>核保失败</td>";}
+            else if(data.state=="6"){rtn+="<td>支付失败</td>";}
+            else if(data.state=="7"){rtn+="<td>支付撤销</td>";}
+            rtn+="<td>";
+            rtn+="<input type=\"hidden\" value=\""+data.companyid+"\" class=\"companyId\"/>";
+            rtn+="<input type=\"hidden\" value=\""+data.state+"\" class=\"state\"/>";
+            rtn+="<input type=\"hidden\" value=\""+data.tradeno+"\" class=\"tradeNo\"/>";
+            rtn+="<input type=\"hidden\" value=\""+data.recordid+"\" class=\"recordId\"/>";
+            rtn+="<input type=\"hidden\" value=\""+data.biproposalno+"\" class=\"biProposalNo\"/>";
+            rtn+="<input type=\"hidden\" value=\""+data.ciproposalno+"\" class=\"ciProposalNo\"/>";
+            rtn+="<input type=\"hidden\" value=\""+data.totalfee+"\" class=\"totalFee\"/>";
+            rtn+="<input type=\"hidden\" value=\""+data.inquriyid+"\" class=\"inquriyId\"/>";
+            rtn+="<input type=\"hidden\" value=\""+data.applicationid+"\" class=\"applicationid\"/>";
+            rtn+="<input type=\"hidden\" value=\""+data.bzapplicationid+"\" class=\"bzApplicationId\"/>";
+            rtn+="<input type=\"hidden\" value=\""+data.vehicleid+"\" class=\"vehicleId\"/>";
+            rtn+="<input type=\"hidden\" value=\""+data.transcode+"\" class=\"transCode\"/>";
+            rtn+="<input type=\"hidden\" value=\""+data.bztranscode+"\" class=\"bzTransCode\"/>";
+            if(data.state=="2"||data.state=="4"){
+                rtn += "<a href=\"#\" class=\"btn convertToInsure\"  style=\"margin-top: 0px;height:30px;width:100px;line-height: 32px !important;\">投保</a>";
+            }else{
+                rtn += "<a href=\"#\" class=\"btn convertToPay\"  style=\"margin-top: 0px;height:30px;width:100px;line-height: 32px !important;\">支付</a>";              
+            }
+            $("#tbody2").on("click",".convertToInsure", function() {
+                var param = {};
+                param["totalFee"] = $(this).siblings(".totalFee").val();
+                param["recordId"] = $(this).siblings(".inquriyId").val();
+                param["applicationid"] = $(this).siblings(".applicationid").val();
+                param["bzApplicationId"] = $(this).siblings(".bzApplicationId").val();
+                param["vehicleId"] = $(this).siblings(".vehicleId").val();
+                param["transCode"] = $(this).siblings(".transCode").val();
+                param["bzTransCode"] = $(this).siblings(".bzTransCode").val();
+                formSubmit(param, "WxInsurance!convertToInsure.action", function(obj) {
+                    window.location.href="WxInsurance!resultPrice.action";
+                }, function(obj) {
+                    new Toast({context:$('body'),message:obj.errorMsg}).show(); 
+                }, function(obj) {},function(obj) {});
+            });
+            $("#tbody2").on("click",".convertToPay", function() {
+                var orderCancel = {};
+                orderCancel["tradeNo"] = $(this).siblings(".tradeNo").val();
+                var param = {};
+                param["state"] = $(this).siblings(".state").val();
+                param["orderCancel"] = JSON.stringify(orderCancel);
+                param["insCompanyName"] = $(this).siblings(".companyId").val();
+                param["saveRecordId"] = $(this).siblings(".recordId").val();
+                param["biProposalNo"] = $(this).siblings(".biProposalNo").val();
+                param["ciProposalNo"] = $(this).siblings(".ciProposalNo").val();
+                param["totalFee"] = $(this).siblings(".totalFee").val();
+                formSubmit(param, "WxInsurance!convertToPay.action", function(obj) {
+                    //提交核保
+                    var url = obj.url;
+                    var return_url = obj.return_url;
+                    var timestamp = obj.timestamp;
+                    var partnerid = obj.partnerid;
+                    var sign = obj.sign;
+                    var total_fee = obj.totalStandardPremium;
+                    url+="?client_type=06&timestamp="+timestamp+"&partner_id="+partnerid+"&sign="+sign+"&total_fee="+total_fee+"&out_trade_no="+obj.tradeNo+"&return_url="+return_url;
+                    window.location.href= url;
+                }, function(obj) {
+                    new Toast({context:$('body'),message:obj.errorMsg}).show(); 
+                    window.location.reload()
+                }, function(obj) {},function(obj) {});
+            });
+            rtn+="</td>";
+        }
+        $("#tbody2").html(rtn);
+    }, function(obj) {
+        new Toast({context:$('body'),message:obj.errorMsg}).show(); 
+    }, function(obj) {},function(obj) {});
+}
+function inquiryAgain(){
+    window.location.href="WxInsurance!coverageListView.action";
+}
+function fillLisenseInfoAgain(){
+    window.location.href="WxInsurance!licenseView.action";
+}
+function getCompanyNameById(id){
+    var rtn ="";
+    switch (id)
+    {
+    case "001000":
+        rtn = "众诚车险";
+        break;
+    case "002000":
+        rtn = "平安保险";
+        break;
+    case "003000":
+        rtn = "阳光保险";
+        break;
+    case "004000":
+        rtn = "中华联合";
+        break;
+    case "005000":
+        rtn = "中国人保";
+        break;
+    case "006000":
+        rtn = "太平保险";
+        break;
+    default :
+        rtn = "其他公司";
+        break;
+    }
+    return rtn;
+}
+
+/**
+ * result.jsp
+ */
+function recognizee() {
+    if ($('input[name="checkbox1"]').is(':checked') === true) {
+        $('#showInfo_1').addClass("hideUl"); // 不显示
+    } else {
+        $('#showInfo_1').removeClass("hideUl"); // 显示
+    }
+}
+function policyHolder() {
+    if ($('input[name="checkbox2"]').is(':checked') === true) {
+        $('#showInfo_2').addClass("hideUl"); // 不显示
+    } else {
+        $('#showInfo_2').removeClass("hideUl"); // 显示
+    }
+}
+function phoneNumber(phone) {
+    var phonenum = $(phone).val();
+    if (!(/^1[0-9]{10}$/.test(phonenum))) {
+        console.log(phonenum);
+        return false;
+    } else {
+        console.log("true" + phonenum);
+        // alert("电话号码及格！");
+    }
+}
+
+/**
+ * coverageList.jsp
+ */
+//商业险选择
+function checkBoxLogic_1() {
+    if ($('input[name="checkbox2"]').is(':checked') === true) {
+        for (var i = 1; i <= 5; i++) {
+            $('#type_' + i).removeClass("hideUl"); // 显示
+            $('#type_' + i).find("input").removeAttr("disabled"); // 启用复选框
+            $('#type_' + i).find("input").attr('checked', true); // 复选框选中
+        }
+        for (var i = 6; i <= 13; i++) {
+            $('#type_' + i).removeClass("hideUl"); // 显示
+            $('#type_' + i).find("input").removeAttr("disabled"); // 启用复选框
+            $('#type_' + i).find("input").removeAttr("checked"); // 复选框选择可用
+        }
+        $('#type_12').find("input").attr("checked", true); // 复选框选中
+        $('#type_13').find("input").attr("disabled", "disabled"); // 禁用复选框
+        $('#type_13').find("input").attr("checked", false); // 复选框选择清除
+        checkBoxLogic_4();
+    } else {
+        for (var i = 1; i <= 13; i++) {
+            $('#type_' + i).addClass("hideUl"); // 不显示
+            $('#type_' + i).find("input").attr("disabled", "disabled"); // 禁用复选框
+            $('#type_' + i).find("input").attr("checked", false); // 复选框选择清除
+        }
+    }
+}
+//车损险禁用
+function checkBoxLogic_2() {
+    if ($('#type_1').find("input").is(':checked') === true) {
+        for (var i = 6; i <= 12; i++) {
+            $('#type_' + i).find("input").removeAttr("disabled"); // 启用复选框
+            $('#type_' + i).find("input").removeAttr("checked"); // 复选框选择可用
+        }
+        $('#type_12').find("input").attr("checked", true); // 复选框选中
+        $('#type_13').find("input").attr("disabled", "disabled"); // 禁用复选框
+        $('#type_13').find("input").attr("checked", false); // 复选框选择清除
+        checkBoxLogic_4();
+    } else {
+        for (var i = 6; i <= 13; i++) {
+            $('#type_' + i).find("input").attr("disabled", "disabled"); // 禁用复选框
+            $('#type_' + i).find("input").attr("checked", false); // 复选框选择清除
+        }
+        $('#type_12').find("input").removeAttr("disabled"); // 启用复选框
+        $('#type_12').find("input").attr("checked", true); // 复选框选中
+        checkBoxLogic_4();
+    }
+}
+//附加不计免赔禁用
+function checkBoxLogic_3() {
+    debugger;
+    if ($('#type_7').find("input").is(':checked') === true) {
+        $('#type_13').find("input").removeAttr("disabled"); // 启用复选框
+        $('#type_13').find("input").attr("checked", true); // 复选框选中
+    } else if ($('#type_8').find("input").is(':checked') === true) {
+        $('#type_13').find("input").removeAttr("disabled"); // 启用复选框
+        $('#type_13').find("input").attr("checked", true); // 复选框选中
+    } else if ($('#type_9').find("input").is(':checked') === true) {
+        $('#type_13').find("input").removeAttr("disabled"); // 启用复选框
+        $('#type_13').find("input").attr("checked", true); // 复选框选中
+    } else {
+        $('#type_13').find("input").attr("disabled", "disabled"); // 禁用复选框
+        $('#type_13').find("input").attr("checked", false); // 复选框选择清除
+    }
+}
+//险种选择禁用
+function checkBoxLogic_4() {
+    if ($('#type_2').find("input").is(':checked') === true) {
+        $('#type_2').find("select").removeAttr("disabled"); // 启用选择框
+        $('#type_2').find("select").removeClass("hideUl"); // 显示
+    } else {
+        $('#type_2').find("select").attr("disabled", "disabled"); // 禁用选择框
+        $('#type_2').find("select").addClass("hideUl"); // 不显示
+    }
+    if ($('#type_3').find("input").is(':checked') === true) {
+        $('#type_3').find("select").removeAttr("disabled"); // 启用选择框
+        $('#type_3').find("select").removeClass("hideUl"); // 显示
+    } else {
+        $('#type_3').find("select").attr("disabled", "disabled"); // 禁用选择框
+        $('#type_3').find("select").addClass("hideUl"); // 不显示
+    }
+    if ($('#type_4').find("input").is(':checked') === true) {
+        $('#type_4').find("select").removeAttr("disabled"); // 启用选择框
+        $('#type_4').find("select").removeClass("hideUl"); // 显示
+    } else {
+        $('#type_4').find("select").attr("disabled", "disabled"); // 禁用选择框
+        $('#type_4').find("select").addClass("hideUl"); // 不显示
+    }
+    if ($('#type_6').find("input").is(':checked') === true) {
+        $('#type_6').find("select").removeAttr("disabled"); // 启用选择框
+        $('#type_6').find("select").removeClass("hideUl"); // 显示
+    } else {
+        $('#type_6').find("select").attr("disabled", "disabled"); // 禁用选择框
+        $('#type_6').find("select").addClass("hideUl"); // 不显示
+    }
+    if ($('#type_7').find("input").is(':checked') === true) {
+        $('#type_7').find("select").removeAttr("disabled"); // 启用选择框
+        $('#type_7').find("select").removeClass("hideUl"); // 显示
+    } else {
+        $('#type_7').find("select").attr("disabled", "disabled"); // 禁用选择框
+        $('#type_7').find("select").addClass("hideUl"); // 不显示
+    }
+}
+//前五项全不选则隐藏
+function checkBoxLogic_5() {
+    if ($('#type_1').find("input").is(':checked') === false 
+            && $('#type_2').find("input").is(':checked') === false
+            && $('#type_3').find("input").is(':checked') === false
+            && $('#type_4').find("input").is(':checked') === false
+            && $('#type_5').find("input").is(':checked') === false) {
+        $('input[name="checkbox2"]').attr("checked", false); // 复选框选择清除
+        checkBoxLogic_1();
+    } 
+}
+
+
+function openLogin(){
+     $("#motai_1").css("display","");
+}
+
+function closeLogin(){
+    $(".motai_1").hide();
+}
+
+function checkBoxLogic_6(){
+    if($("input[type='checkbox']").prop("checked")==true){
+         $('.rightbtn').attr("href",href="javascript:payApply();");
+         $('.rightbtn').css("background","#2f90f1");
+     }else{
+         $('.rightbtn').attr("href",href="");
+         $('.rightbtn').css("background","#EAEAEE");
+     }
+}
+//计算合计保费   companyChoose.jsp
+function getTotalFee(application,applicationBz,coverageListBz){
+    var　totalFee=0;
+    if(application!=null&&application!=""){
+        totalFee += Math.round(parseFloat(application.totalStandardPremium) * 100) / 100;
+    }
+    if(coverageListBz!=null&&coverageListBz!=""){
+        if(coverageListBz!=null){
+            var reCoverage = coverageListBz[0];
+            totalFee += Math.round(parseFloat(reCoverage.standardPremium) * 100) / 100;
+        }
+    }
+    if(applicationBz!=null){
+        if(applicationBz.sumPayTax!=null){
+            totalFee += Math.round(parseFloat(applicationBz.sumPayTax) * 100) / 100;    
+        }
+    }
+    totalFee = Math.round(parseFloat(totalFee) * 100) / 100;
+    return totalFee;
+}
+
+</script>
+
+</head>
+<body>
+<div class="wraper">
+        <!-- 头部导航 -->
+        <div class="head over-flow">
+            <div class="returnbtn">
+                <img onclick="javascript:history.back(-1);"  />
+            </div>
+            <div class="companyname"><span>团</span></div>
+            <a class="phone" href="http://insurance.onclick.im/wechat/exwsm/wechat/WxInsurance!contactNumber.action">
+                <img src="http://insurance.onclick.im/wechat/exwsm/styles/insurance/images/wechat/top2.png" />
+            </a>
+        </div>
+        <span class="replaceHead"></span>
+            <!--<div class="imgInfo"></div> -->
+            <!-- 图片展示 -->
+            <img class="imgInfo1" src="http://insurance.onclick.im/wechat/exwsm/styles/insurance/images/wechat/top.png"/>
+            <!-- 查询操作 -->
+        <div class="hpBtnDiv colorselect" >
+            <div style=" display: none"> 
+                <a href="http://insurance.onclick.im/wechat/exwsm/wechat/WxInsurance!inquiryRecordView.action "><img
+                    src="http://insurance.onclick.im/wechat/exwsm/styles/insurance/images/wechat/top3.png" /><span>综合查询</span></a>
+            </div>
+            <div style=" display: none">
+                <a href="http://insurance.onclick.im/wechat/exwsm/wechat/WxInsurance!insuredRecordView.action "><img
+                    src="http://insurance.onclick.im/wechat/exwsm/styles/insurance/images/wechat/top5.png" /><span>保单查询</span></a>
+            </div>
+            <div style=" display: none">
+                <a href="http://insurance.onclick.im/wechat/exwsm/wechat/UserCenter!user.action"><img
+                    src="http://insurance.onclick.im/wechat/exwsm/styles/insurance/images/wechat/top4.png" /><span>个人中心</span></a>
+            </div>
+            
+        </div>
+
+        
+        <!--导航栏-->
+        
+        <!--车辆信息填写writeInfo部分-->
+        <!-- 数据不齐全 -->
+        <script type="text/javascript">
+        $(function(){
+            var nowStatus = "3";
+            if(nowStatus!=""&&nowStatus<=2){
+                window.location.href = url+"/wechat/mall/Member!home.action?whichIndex=";   
+            }
+        });
+        </script>
+        <ul class="writeInfo">
+            <li>
+                <div class="title">
+                    <img src="http://insurance.onclick.im/wechat/exwsm/styles/insurance/images/wechat/top6.png">
+                </div>
+                <div class="fillWrite provice">
+                    <i class="hpBtnDiv1"></i>
+                    <select id="areaName" class="hpBtnDiv1">
+                        <option value="粤">粤</option>
+                        <option value="浙">浙</option>
+                        <option value="闽">闽</option>
+                        <option value="京">京</option>
+                        <option value="津">津</option>
+                        <option value="冀">冀</option>
+                        <option value="晋">晋</option>
+                        <option value="蒙">蒙</option>
+                        <option value="辽">辽</option>
+                        <option value="吉">吉</option>
+                        
+                        <option value="黑">黑</option>
+                        <option value="沪">沪</option>
+                        <option value="苏">苏</option>
+                        <option value="皖">皖</option>
+                        <option value="赣">赣</option>
+                        <option value="鲁">鲁</option>
+                        <option value="豫">豫</option>
+                        <option value="鄂">鄂</option>
+                        <option value="湘">湘</option>
+                        <option value="桂">桂</option>
+                        
+                        <option value="琼">琼</option>
+                        <option value="渝">渝</option>
+                        <option value="川">川</option>
+                        <option value="贵">贵</option>
+                        <option value="云">云</option>
+                        <option value="藏">藏</option>
+                        <option value="陕">陕</option>
+                        <option value="甘">甘</option>
+                        <option value="青">青</option>
+                        <option value="宁">宁</option>
+                        <option value="新">新</option>
+                        
+                        
+                    </select>
+                    
+                    
+                    <input type="text"  name="licensePlateNo" Placeholder="请输入你的车牌号" maxlength="6"  onblur="value=value.replace(/[^\a-\z\A-\Z0-9]/g,'')">
+                </div>
+            </li>
+            
+        </ul>
+        <!--按钮部分-->
+        <div class="statement"><input class="chkbox" type="checkbox" name="checkbox" value="checkbox1" checked="checked">&nbsp;&nbsp;<a class="ext" href="http://insurance.onclick.im/wechat/exwsm/wechat/WxInsurance!disclaimer.action">已阅读责任声明</a></div>
+                        <!-- 空白区间 -->
+          
+        <span class="repalcebtn"></span>
+        <a href="javascript:carInfoSubmit()" class="rightbtn">下一步</a>
+    </div>
+</body>
+</html>
