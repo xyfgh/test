@@ -1,0 +1,263 @@
+<!-- 支付查询页面 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>支付查询</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" type="text/css" href="style/global.css">
+	<style type="text/css">
+		.paybar{
+			width: inherit;
+			height: 52px;
+			padding: 0 3%;
+			text-align: center;
+			font-size: 0;
+		}
+		.paybar span{
+			display: inline-block;
+			width: 50%;
+			line-height: 50px;
+			font-size: 1rem;
+			border-bottom: 2px solid #fff;
+		}
+		.paybar .active{
+			border-bottom: 2px solid #2f90f1;
+		}
+		.wrap-pay .title{
+			width: inherit;
+			height: 30px;
+			background-color: #f2f4f3;
+			font-size: 0;
+			padding: 0 3%;
+		}
+		.wrap-pay .title span{
+			font-size: 0.6rem;
+			display: inline-block;
+			vertical-align: middle;
+			line-height: 30px;
+			width: 50%;
+			color: #999999;
+		}
+		.wrap-pay .date{
+			text-align: left;
+		}
+		.wrap-pay .count{
+			text-align: right;
+		}
+		.pay .item{
+			width: 92%;
+			height: 60px;
+			border-bottom: 1px solid #e6e6e6;
+			padding: 10px 4%;
+			display: inline-block;
+			font-size: 0;
+			vertical-align: text-top;
+		}
+		.pay .item:last-child{
+			border-bottom: none;
+		}
+		.btn-pay{
+			height: 28px;
+			margin: 16px 0;
+			background-color: #fff;
+			line-height: 28px!important;
+		}
+		.pay .col1{
+			width: 35%;
+			display: inline-block;
+			vertical-align: text-top;
+		}
+		.pay .col2{
+			width: 50%;
+			display: inline-block;
+			vertical-align: text-top;
+		}
+		.pay span{
+			font-size: 0.7rem;
+			display: block;
+		}
+		.pay .xingming{
+			font-size: 1rem;
+			color: #333333;
+			height: 20px;
+			line-height: 20px;
+		}
+		.pay .chepai{
+			color: #666666;
+			height: 20px;
+			line-height: 20px;
+		}
+		.pay .time{
+			color: #cccccc;
+			height: 20px;
+			line-height: 20px;
+		}
+		.pay .jiage{
+			font-size: 1rem;
+			color: #333333;
+			height: 20px;
+			line-height: 20px;
+		}
+		.pay .zhuangtai{
+			color: #ff5959;
+			height: 20px;
+			line-height: 20px;
+			text-indent: 0.3rem;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap-page">
+		<div class="wrap-top">
+			<div class="topbar topbar-normal">
+				<a class="top-icon icon-back" href="###"><img src="images/icon-topbarback.png"></a>
+				<span>支付查询</span>
+			</div>
+		</div>
+		<div class="wrap-main">
+			<div class="wrap-payquery">
+				<!-- 头部分页栏 -->
+				<div class="paybar">
+					<span class="daizhifu active">待支付</span>
+					<span class="daishengcbaodan">待生成保单</span>
+				</div>
+			</div>
+			<!-- 待支付列表 -->
+			<div class="wrap-pay">
+				<ul class="month">
+					<div class="title">
+						<span class="date">2016年09月</span><span class="count">保单数：4</span>
+					</div>
+					<ul class="pay">
+						<li class="item">
+							<div class="col1">
+								<span class="xingming">何小明</span>
+								<span class="chepai">川A12345</span>
+								<span class="time">09-05 10:27</span>
+							</div>
+							<div class="col2">
+								<span class="jiage">￥6894.36</span>
+								<span class="zhuangtai">已核保</span>
+							</div>
+							<a href="###" class="btn btn-right btn-pay">支付</a>
+						</li>
+						<li class="item">
+							<div class="col1">
+								<span class="xingming">何小明</span>
+								<span class="chepai">川A12345</span>
+								<span class="time">09-05 10:27</span>
+							</div>
+							<div class="col2">
+								<span class="jiage">￥6894.36</span>
+								<span class="zhuangtai">已核保</span>
+							</div>
+							<a href="###" class="btn btn-right btn-pay">支付</a>
+						</li>
+						<li class="item">
+							<div class="col1">
+								<span class="xingming">何小明</span>
+								<span class="chepai">川A12345</span>
+								<span class="time">09-05 10:27</span>
+							</div>
+							<div class="col2">
+								<span class="jiage">￥6894.36</span>
+								<span class="zhuangtai">已核保</span>
+							</div>
+							<a href="###" class="btn btn-right btn-pay">支付</a>
+						</li>
+						<li class="item">
+							<div class="col1">
+								<span class="xingming">何小明</span>
+								<span class="chepai">川A12345</span>
+								<span class="time">09-05 10:27</span>
+							</div>
+							<div class="col2">
+								<span class="jiage">￥6894.36</span>
+								<span class="zhuangtai">已核保</span>
+							</div>
+							<a href="###" class="btn btn-right btn-pay">支付</a>
+						</li>
+					</ul>
+				</ul>
+				<ul class="month">
+					<div class="title">
+						<span class="date">2016年09月</span><span class="count">保单数：4</span>
+					</div>
+					<ul class="pay">
+						<li class="item">
+							<div class="col1">
+								<span class="xingming">何小明</span>
+								<span class="chepai">川A12345</span>
+								<span class="time">09-05 10:27</span>
+							</div>
+							<div class="col2">
+								<span class="jiage">￥6894.36</span>
+								<span class="zhuangtai">已核保</span>
+							</div>
+							<a href="###" class="btn btn-right btn-pay">支付</a>
+						</li>
+						<li class="item">
+							<div class="col1">
+								<span class="xingming">何小明</span>
+								<span class="chepai">川A12345</span>
+								<span class="time">09-05 10:27</span>
+							</div>
+							<div class="col2">
+								<span class="jiage">￥6894.36</span>
+								<span class="zhuangtai">已核保</span>
+							</div>
+							<a href="###" class="btn btn-right btn-pay">支付</a>
+						</li>
+						<li class="item">
+							<div class="col1">
+								<span class="xingming">何小明</span>
+								<span class="chepai">川A12345</span>
+								<span class="time">09-05 10:27</span>
+							</div>
+							<div class="col2">
+								<span class="jiage">￥6894.36</span>
+								<span class="zhuangtai">已核保</span>
+							</div>
+							<a href="###" class="btn btn-right btn-pay">支付</a>
+						</li>
+						<li class="item">
+							<div class="col1">
+								<span class="xingming">何小明</span>
+								<span class="chepai">川A12345</span>
+								<span class="time">09-05 10:27</span>
+							</div>
+							<div class="col2">
+								<span class="jiage">￥6894.36</span>
+								<span class="zhuangtai">已核保</span>
+							</div>
+							<a href="###" class="btn btn-right btn-pay">支付</a>
+						</li>
+					</ul>
+				</ul>
+			</div>
+			<!-- 待生成保单 -->
+			<div class="wrap-order">
+				hsajkfh
+			</div>
+		</div>
+		<div class="wrap-bottom">
+			<a href="###" class="bottom-icon left"><img src="images/icon-bottomhome.png"><span>首页</span></a>
+			<a href="###" class="bottom-icon center"><img src="images/icon-bottommess.png"><span>消息</span></a>
+			<a href="###" class="bottom-icon right"><img src="images/icon-bottomuser.png"><span>我的</span></a>
+		</div>
+	</div>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="js/global.js"></script>
+	<script type="text/javascript">
+		$('.paybar span').on('click',function () {
+			console.log('1');
+			$('.wrap-pay').hide();
+		})
+	</script>
+</body>
+</html>

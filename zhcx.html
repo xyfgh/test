@@ -1,0 +1,245 @@
+<!-- 综合查询页面 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>综合查询</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" type="text/css" href="style/global.css">
+	<link rel="stylesheet" type="text/css" href="style/layer.css">
+	<style type="text/css">
+		.wrap-multiquery{
+			padding: 0 3% 5%;
+			overflow: auto;
+		}
+		.wrap-multiquery p{
+			float: left;
+			text-align: left;
+			font-size: 1rem;
+		}
+		.list-multiquery{
+			clear: both;
+		}
+		.list-multiquery>li{
+			min-height: 50px;
+			line-height: 50px;
+			border-bottom: 1px solid #e6e6e6;
+			clear: both;
+			background-color: #fff;
+		}
+		.list-multiquery .chepai{
+			width: 32%;
+			text-indent: 0.2rem;
+		}
+		.list-multiquery .xingming{
+			width: 28%
+		}
+		.list-multiquery .zhuangtai{
+			width: 20%;
+		}
+		.icon-multiquerylist{
+			float: left;
+			width: 20%;
+			height: 50px;
+			background: url(images/icon-multiquerylist.png) center center no-repeat;
+		}
+		.icon-multiquerylist-clicked{
+			background: url(images/icon-multiquerylist-clicked.png) center center no-repeat!important;
+		}
+		.list-multiquery-sublevel{
+			clear: both;
+			display: none;
+		}
+		.list-multiquery-sublevel>li{
+			height: 50px;
+			line-height: 50px;
+			width: inherit;
+			clear: both;
+			background-color: #f2f4f3;
+		}
+		.list-multiquery-sublevel>li+li{
+			border-top: 1px solid #e6e6e6;
+		}
+		.list-multiquery-sublevel .gongsi{
+			width: 32%;
+			text-indent: 0.3rem;
+		}
+		.list-multiquery-sublevel .jiage{
+			width: 28%;
+		}
+		.btn-multiquery-sublevel{
+			height: 28px;
+			margin: 10px 2%;
+			line-height: 28px!important;
+			background-color: #f2f4f3;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap-page">
+		<div class="wrap-top">
+			<div class="topbar topbar-normal">
+				<a class="top-icon icon-back" href="###"><img src="images/icon-topbarback.png"></a>
+				<span>综合查询</span>
+			</div>
+		</div>
+		<div class="wrap-main">
+			<div class="wrap-search">
+				<input class="input-search" type="text" name="" placeholder="搜索车牌 车主姓名">
+				<input class="btn-search" type="button" name="" value="搜索">
+			</div>
+			<div class="wrap-multiquery">
+				<ul class="list-multiquery">
+					<li>
+						<p class="chepai">川A12345</p>
+						<p class="xingming">何江</p>
+						<p class="zhuangtai">已报价</p>
+						<div class="icon-multiquerylist"></div>
+						<ul class="list-multiquery-sublevel">
+							<li>
+								<p class="gongsi">太平保险</p>
+								<p class="jiage"><span>￥</span>6894.36</p>
+								<p class="zhuangtai">已报价</p>
+								<a href="###" class="btn btn-right btn-multiquery-sublevel">投保</a>
+							</li>
+							<li>
+								<p class="gongsi">太平保险</p>
+								<p class="jiage"><span>￥</span>6894.36</p>
+								<p class="zhuangtai">已报价</p>
+								<a href="###" class="btn btn-right btn-multiquery-sublevel">投保</a>
+							</li>
+							<li>
+								<p class="gongsi">太平保险</p>
+								<p class="jiage"><span>￥</span>6894.36</p>
+								<p class="zhuangtai">已报价</p>
+								<a href="###" class="btn btn-right btn-multiquery-sublevel">投保</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p class="chepai">川A12345</p>
+						<p class="xingming">何江</p>
+						<p class="zhuangtai">已报价</p>
+						<div class="icon-multiquerylist"></div>
+						<ul class="list-multiquery-sublevel">
+							<li>
+								<p class="gongsi">太平保险</p>
+								<p class="jiage"><span>￥</span>6894.36</p>
+								<p class="zhuangtai">已报价</p>
+								<a href="###" class="btn btn-right btn-multiquery-sublevel">投保</a>
+							</li>
+							<li>
+								<p class="gongsi">太平保险</p>
+								<p class="jiage"><span>￥</span>6894.36</p>
+								<p class="zhuangtai">已报价</p>
+								<a href="###" class="btn btn-right btn-multiquery-sublevel">投保</a>
+							</li>
+							<li>
+								<p class="gongsi">太平保险</p>
+								<p class="jiage"><span>￥</span>6894.36</p>
+								<p class="zhuangtai">已报价</p>
+								<a href="###" class="btn btn-right btn-multiquery-sublevel">投保</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p class="chepai">川A12345</p>
+						<p class="xingming">何江</p>
+						<p class="zhuangtai">已报价</p>
+						<div class="icon-multiquerylist"></div>
+						<ul class="list-multiquery-sublevel">
+							<li>
+								<p class="gongsi">太平保险</p>
+								<p class="jiage"><span>￥</span>6894.36</p>
+								<p class="zhuangtai">已报价</p>
+								<a href="###" class="btn btn-right btn-multiquery-sublevel">投保</a>
+							</li>
+							<li>
+								<p class="gongsi">太平保险</p>
+								<p class="jiage"><span>￥</span>6894.36</p>
+								<p class="zhuangtai">已报价</p>
+								<a href="###" class="btn btn-right btn-multiquery-sublevel">投保</a>
+							</li>
+							<li>
+								<p class="gongsi">太平保险</p>
+								<p class="jiage"><span>￥</span>6894.36</p>
+								<p class="zhuangtai">已报价</p>
+								<a href="###" class="btn btn-right btn-multiquery-sublevel">投保</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p class="chepai">川A12345</p>
+						<p class="xingming">何江</p>
+						<p class="zhuangtai">已报价</p>
+						<div class="icon-multiquerylist"></div>
+						<ul class="list-multiquery-sublevel">
+							<li>
+								<p class="gongsi">太平保险</p>
+								<p class="jiage"><span>￥</span>6894.36</p>
+								<p class="zhuangtai">已报价</p>
+								<a href="###" class="btn btn-right btn-multiquery-sublevel">投保</a>
+							</li>
+							<li>
+								<p class="gongsi">太平保险</p>
+								<p class="jiage"><span>￥</span>6894.36</p>
+								<p class="zhuangtai">已报价</p>
+								<a href="###" class="btn btn-right btn-multiquery-sublevel">投保</a>
+							</li>
+							<li>
+								<p class="gongsi">太平保险</p>
+								<p class="jiage"><span>￥</span>6894.36</p>
+								<p class="zhuangtai">已报价</p>
+								<a href="###" class="btn btn-right btn-multiquery-sublevel">投保</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p class="chepai">川A12345</p>
+						<p class="xingming">何江</p>
+						<p class="zhuangtai">已报价</p>
+						<div class="icon-multiquerylist"></div>
+						<ul class="list-multiquery-sublevel">
+							<li>
+								<p class="gongsi">太平保险</p>
+								<p class="jiage"><span>￥</span>6894.36</p>
+								<p class="zhuangtai">已报价</p>
+								<a href="###" class="btn btn-right btn-multiquery-sublevel">投保</a>
+							</li>
+							<li>
+								<p class="gongsi">太平保险</p>
+								<p class="jiage"><span>￥</span>6894.36</p>
+								<p class="zhuangtai">已报价</p>
+								<a href="###" class="btn btn-right btn-multiquery-sublevel">投保</a>
+							</li>
+							<li>
+								<p class="gongsi">太平保险</p>
+								<p class="jiage"><span>￥</span>6894.36</p>
+								<p class="zhuangtai">已报价</p>
+								<a href="###" class="btn btn-right btn-multiquery-sublevel">投保</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="wrap-bottom">
+			<a href="###" class="bottom-icon left"><img src="images/icon-bottomhome.png"><span>首页</span></a>
+			<a href="###" class="bottom-icon center"><img src="images/icon-bottommess.png"><span>消息</span></a>
+			<a href="###" class="bottom-icon right"><img src="images/icon-bottomuser.png"><span>我的</span></a>
+		</div>
+	</div>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="js/global.js"></script>
+	<script type="text/javascript">
+		$(".icon-multiquerylist").on("click",function(){
+			$(this).toggleClass("icon-multiquerylist-clicked");
+			$(this).parent().children("ul").slideToggle(300);
+		});
+	</script>
+</body>
+</html>

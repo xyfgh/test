@@ -1,0 +1,258 @@
+/*reset*/
+html,body,div,p,input,ul,li,a{
+	margin: 0;
+	padding: 0;
+}
+input,select{
+	border: none;
+	outline:none;
+}
+html,body{
+	width: 100%;
+	min-width: 320px;
+	/*max-width: 640px;*/
+	font-family: 微软雅黑,'Microsoft Yahei';
+	background-color: #fff;
+	font-size: 16px;
+	height: 100%;
+	color: #333333;
+}
+ul,li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+img{
+	display: block;
+}
+/*清除浮动*/
+.clearfix:after {
+	content: " ";
+	display: block;
+	clear: both;
+	height: 0;
+}
+.clearfix {
+	zoom: 1;
+}
+.hide{
+	display: none;
+}
+.show{
+	display: block;
+}
+
+/*页面包裹层*/
+.wrap-page{
+	margin: 0;
+	padding: 0;
+	width: inherit;
+	height: inherit;
+}
+/*头部包裹层*/
+.wrap-top{
+	width: inherit;
+	height: 46px;
+	background-color: #fff;
+}
+/*网页头部条*/
+.topbar{
+	position: fixed;
+	left: 0;
+	top: 0;
+	background-color: #f0f0f0;
+	width: inherit;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	color: #0dacfd;
+	font-size: 1.5rem;
+	overflow: auto;
+}
+.topbar-normal{
+	border-bottom: 1px solid #e6e6e6;
+}
+.topbar-normal span{
+	color: #333;
+	font-size: 1.1rem;
+	display: block;
+	height: 46px;
+	line-height: 46px;
+}
+.top-icon{
+	width: 28px;
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	height: 46px;
+}
+.icon-back img{
+	width: 12px;
+	height: 20px;
+	display: block;
+	margin: 13px 0 0 15px;
+}
+.icon-back{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 60px;
+	height: 46px;
+}
+/*基础按钮*/
+.btn{
+	display: block;
+	height: 45px;
+	line-height: 45px;
+	width: inherit;
+	background-color: #ccc;
+	color: #000;
+	text-align: center;
+	font: 1rem 微软雅黑,'Microsoft Yahei';
+}
+/*页面底部的按钮*/
+.btn-bottom{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	font-size: 0.95rem;
+	color: #fff;
+	vertical-align: middle;
+	clear: both;
+}
+/*主要按钮*/
+.btn-primary{
+	border-radius: 4px;
+	width: 90%;
+	margin: 0 auto;
+	color: #fff;
+	font-size: 0.95rem;
+	background-color: #2f90f7;
+	clear: both;
+	height: 50px;
+	line-height: 50px;
+}
+/*禁用的按钮*/
+.btn-disabled{
+	background-color: #ddd!important;
+}
+/*页面主体包裹层*/
+.wrap-main{
+	width: inherit;
+	padding-bottom: 66px;
+}
+.wrap-main img{
+	width: inherit;
+	overflow: auto;
+}
+/*带文字的图标*/
+.icon-text{
+	display: block;
+	text-align: -webkit-center;
+	color: #636262;
+	float: left;
+}
+.icon-text img{
+	width: 42%;
+}
+.icon-text span{
+	color: #636262;
+	line-height: 40px;
+	font-size: 1.1rem;
+
+}
+
+/*底部包裹层*/
+.wrap-bottom{
+	width: inherit;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	line-height: 45px;
+	height: 45px;
+	background-color: #fafafa;
+	border-top: 1px solid #e6e6e6;
+}
+.bottom-icon{
+	float: left;
+	display: block;
+	width: 33.33%;
+}
+.bottom-icon img{
+	width: 25px;
+	margin: 2px auto;
+}
+.bottom-icon span{
+	color: #666666;
+	float: left;
+	line-height: 0.8rem;
+	font-size:0.8rem; 
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+
+/*默认选择框*/
+/*必须设置父元素字体为0*/
+input[type="checkbox"] {
+	-webkit-appearance: none;
+	width: 22px;
+	height: 22px;
+	line-height: 22px;
+	vertical-align: middle;
+	background: #fff url("../images/checkbox.png");
+	background-position: -45px 0;
+}
+input[type="checkbox"]:checked {
+	background-position: 0 0;
+	vertical-align: middle;
+}
+
+/*屏幕宽度小于320px时，缩小根字号大小*/
+@media screen and (max-width: 360px){
+	html{
+		font-size: 14px;
+	}
+}
+
+.wrap-search{
+	height: 40px;
+	padding: 20px 5%;
+	font-size: 0;
+	vertical-align: middle;
+}
+.input-search{
+	height: 38px;
+	border: 1px solid #cccccc;
+	border-radius: 6px;
+	font: 1rem/38px 微软雅黑,'Microsoft Yahei';
+	padding: 0 1rem;
+	vertical-align: middle;
+	width: 62%;
+	/*float: left;*/
+}
+.btn-search{
+	background-color: #2f90f1;
+	border-radius: 6px;
+	color: #fff;
+	font: 1rem/40px 微软雅黑,'Microsoft Yahei';
+	height: 40px;
+	width: 25%;
+	float: right;
+}
+
+.btn-right{
+	width: 14%;
+	float: right;
+	height: 28px;
+	margin: 10px 2%;
+	border: 1px solid #2f90f1;
+	color: #2f90f1;
+	border-radius: 5px;
+	background-color: #f2f4f3;
+	line-height: 28px!important;
+	font: 1rem 微软雅黑,'Microsoft Yahei';
+	vertical-align: middle;
+}

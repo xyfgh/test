@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>carInfo</title>
+	<link rel="stylesheet" type="text/css" href="style/global.css">
+	<link rel="stylesheet" type="text/css" href="style/layer.css">
+	<style type="text/css">
+		.icondiv{
+			height: 10rem;
+			padding: 0 5%;
+		}
+		.icon-text{
+			display: block;
+			width: 33.33%;
+			margin-top: 1.5rem;
+		}
+		.icon-usercenter{
+			left: 0;
+			width: 60px;
+		}
+		.icon-servicephone{
+			right: 0px;
+			width: 60px;
+		}
+		.icon-usercenter img{
+			width: 28px;
+			height: 28px;
+			position: fixed;
+			left: 10px;
+			top: 8px;
+		}
+		.icon-servicephone img{
+			width: 28px;
+			height: 28px;
+			position: fixed;
+			right: 10px;
+			top: 8px;
+		}
+		.icon-text img{
+			height: 4rem;
+			width: 4rem;
+		}
+		.input-carnum{
+			/*width: 92%;*/
+			height: 30px;
+			margin: 0 4%;
+			padding: 10px 0;
+			border: 1px solid #ccc;
+			border-radius: 10px;
+			line-height: 30px;
+			/*min-width: 300px;*/
+			font-size: 1rem;
+		}
+		.input-carnum img{
+			width: 32px;
+			height: 26px;
+			margin: 12px 0 0 13px;
+			float: left;
+			background-color: #f8f8f8;
+		}
+		.input-carnum .imgbg{
+			height: 50px;
+			border-radius: 10px 0 0 10px ;
+			float: left;
+			width: 60px;
+			background-color: #f8f8f8;
+			margin-top: -10px;
+		}
+		.input-carnum select{
+			-webkit-appearance: none;
+			float: left;
+			height: 30px;
+			width: 3rem;
+			font: inherit;
+			color: #333333;
+			margin-left: 1rem;
+			font-size: 1rem;
+			background: url(images/icon-listdown.png) no-repeat center #fff;
+			vertical-align: middle;
+		}
+
+		.input-carnum>input{
+			/*width: 100%;*/
+			height: 30px;
+			font: 1rem 微软雅黑,'Microsoft Yahei';
+			-webkit-tap-highlight-color: none;
+			float: left;
+			width: 8rem;
+			vertical-align: middle;
+		}
+		.statement{
+			float: right; 
+			margin: 2rem 5% 2rem 0;
+			/*margin-right: 5%;*/
+			height: 22px;
+			line-height: 22px;
+			vertical-align: middle;
+			font-size: 0;
+		}
+		.statement span{
+			display: inline-block;
+			height: 22px;
+			line-height: 22px;
+			vertical-align: middle;
+			font-size: 1rem;
+			margin-left: 0.3rem;
+		}
+		.statement a{
+			display: inline-block;
+			color: #2f90f1;
+			height: 22px;
+			line-height: 22px;
+			font-size: 1rem;
+			vertical-align: middle;
+			margin: 0 0.3rem;
+		}
+		.weishangpai{
+			float: right;
+			top: 0;
+			right: 0;
+			vertical-align: middle;
+			margin-right: 0.4rem;
+			height: 22px;
+			line-height: 22px;
+			margin-top: 4px;
+			margin-bottom: 4px;
+			font-size: 0;
+		}
+		.weishangpai input{
+			
+		}
+		.weishangpai span{
+			display:block;
+			float: right;
+			height: 22px;
+			margin-left: 0.2rem;
+			line-height: 22px;
+			font-size: 1rem;
+			vertical-align: middle;
+			color: #999999;
+		}
+		@media screen and (max-width: 370px){
+			.input-carnum select{
+				margin-left: 0.2rem;
+			}
+			.weishangpai{
+				margin-right: 0.1rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap-page">
+		<div class="wrap-top">
+			<a class="top-icon icon-usercenter" href="###">
+				<img src="images/icon-usercenter.png">
+			</a>
+			<a class="top-icon icon-servicephone" href="###">
+				<img src="images/icon-servicephone.png">
+			</a>
+			<div class="topbar">team</div>
+			
+		</div>
+		
+		<div class="wrap-main">
+			<img src="images/top.png">
+			<div class="icondiv">
+				<a class="icon-text" href="###">
+					<img src="images/icon-zhcx.png"><span>综合查询</span>
+				</a>
+				<a class="icon-text" href="###">
+					<img src="images/icon-bdcx.png"><span>保单查询</span>
+				</a>
+				<a class="icon-text" href="###">
+					<img src="images/icon-grzx.png"><span>个人中心</span>
+				</a>
+			</div>
+			<div class="input-carnum">
+				<div class="imgbg">
+					<img src="images/icon-inputcarnum.png">
+				</div>
+				
+				<select id="areaName" class="" style="-webkit-appearance: ;">
+						<option value="粤">粤</option>
+						<option value="浙">浙</option>
+						<option value="闽">闽</option>
+						<option value="京">京</option>
+						<option value="津">津</option>
+						<option value="冀">冀</option>
+						<option value="晋">晋</option>
+						<option value="蒙">蒙</option>
+						<option value="辽">辽</option>
+						<option value="吉">吉</option>
+						
+						<option value="黑">黑</option>
+						<option value="沪">沪</option>
+						<option value="苏">苏</option>
+						<option value="皖">皖</option>
+						<option value="赣">赣</option>
+						<option value="鲁">鲁</option>
+						<option value="豫">豫</option>
+						<option value="鄂">鄂</option>
+						<option value="湘">湘</option>
+						<option value="桂">桂</option>
+						
+						<option value="琼">琼</option>
+						<option value="渝">渝</option>
+						<option value="川">川</option>
+						<option value="贵">贵</option>
+						<option value="云">云</option>
+						<option value="藏">藏</option>
+						<option value="陕">陕</option>
+						<option value="甘">甘</option>
+						<option value="青">青</option>
+						<option value="宁">宁</option>
+						<option value="新">新</option>
+				</select>
+				<input class="carnum" type="text" name="licensePlateNo" placeholder="请输入你的车牌号" maxlength="6" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9]/g,'')">
+				<div class="weishangpai">
+					<input class="input-wsp" type="checkbox" name="">
+					<span>未上牌</span>
+				</div>
+				
+			</div>
+			<div class="statement">
+				<input class="checkbox-bind-btn" type="checkbox" name="checkbox" value="checkbox1" checked>
+				<span>我已阅读</span>
+				<a class="" href="http://insurance.onclick.im/wechat/exwsm/wechat/WxInsurance!disclaimer.action">责任声明</a>
+			</div>
+			<a href="###" class="btn btn-primary btn-bind-checkbox">下一步</a>
+			<div id="toastMessage" class="layermbox layermbox0 layermshow" style="display: none;"><div class="layermmain"><div class="section"><div class="layermchild  layermanim" style="text-align:center;border:none;background-color:rgba(0,0,0,0.6);color:#fff;"><div class="layermcont">车牌号码不得为空</div></div></div></div></div>
+		<div class="wrap-bottom">
+			<a href="###" class="bottom-icon left"><img src="images/icon-bottomhome.png"><span>首页</span></a>
+			<a href="###" class="bottom-icon center"><img src="images/icon-bottommess.png"><span>消息</span></a>
+			<a href="###" class="bottom-icon right"><img src="images/icon-bottomuser.png"><span>我的</span></a>
+		</div>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="js/layer.m.js"></script>
+	<script type="text/javascript" src="js/phoneAlert.js"></script>
+	<script type="text/javascript" src="js/global.js"></script>
+	<script type="text/javascript">
+		$(".input-wsp").on("click",function(){
+			if ($('.input-wsp').prop("checked")) {
+				$('.input-carnum .carnum').val('A*');
+			}
+			else if ($('.input-wsp').prop("checked")==false){
+				$('.input-carnum .carnum').val('');
+			}
+		});
+		$(".carnum").focus(function () {
+			$('.input-wsp').prop("checked",false);
+			$(".carnum").val('');
+		});
+		$(".btn-bind-checkbox").on("click",function(){
+			if($(".carnum").val()==""){
+				new Toast({context:$('body'),message:'车牌号码不得为空'}).show(); 
+				return;
+			}
+		});
+	</script>
+	</div>
+</body>
+</html>
